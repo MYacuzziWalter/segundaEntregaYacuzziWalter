@@ -1,18 +1,23 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import products from '../../assets/MOCK_DATA.json'
+import mockProducts from '../../assets/MOCK_DATA.json'
+import { useParams } from 'react-router-dom'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
 
     const [product, setProducts] = useState(null)
 
+    const {id} = useParams()
+
     useEffect(() => {
-        setProducts(products[0])
-    }, [])
+        const product = mockProducts.find(productToFind => productToFind.id === Number(id))
+
+        setProducts(product)
+    }, [id])
 
 
-    return (
-        <ItemDetail product={product}/>
+    return ( product && <ItemDetail product={product}/>
     )
 }
 
