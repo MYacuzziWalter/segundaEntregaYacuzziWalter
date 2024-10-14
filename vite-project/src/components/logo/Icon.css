@@ -1,0 +1,10 @@
+.logo{
+    width: 150px;
+    transition: 0.6s ;
+}
+
+.logo:hover {
+    scale: 1.2;
+    filter: drop-shadow(0px 0px 15px #bbbb07);
+
+}
