@@ -11,17 +11,17 @@ const NavBar = () => {
             <Icon src={Icon1}/>
             <ul>
                 <li>
-                    <Link className="" to={"/"}>
+                    <Link className="link" to={"/"}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to={"/category/remeras"}>
+                    <Link className="link" to={"/category/remeras"}>
                         Remeras
                     </Link>
                 </li>
                 <li>
-                    <Link to={"/category/buzos"}>
+                    <Link className="link" to={"/category/buzos"}>
                         Buzos
                     </Link>
                 </li>
