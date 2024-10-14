@@ -1,27 +1,27 @@
 import React from 'react'
-import '../navbar/NavBar.css'
+import Styles from "./navBar.module.css"
 import CartWidget from '../cartwidget/CartWidget'
 import Icon from '../logo/Icon'
-import Icon1 from '../../assets/logo.png'
+import Icon1 from '../../assets/logoDoopel.png'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <nav>
+        <nav className={Styles.nav}>
             <Icon src={Icon1}/>
-            <ul>
+            <ul className={Styles.ul}>
                 <li>
-                    <Link className="link" to={"/"}>
+                    <Link className={Styles.link} to={"/"}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link className="link" to={"/category/remeras"}>
+                    <Link className={Styles.link} to={"/category/remeras"}>
                         Remeras
                     </Link>
                 </li>
                 <li>
-                    <Link className="link" to={"/category/buzos"}>
+                    <Link className={Styles.link} to={"/category/buzos"}>
                         Buzos
                     </Link>
                 </li>

@@ -4,7 +4,7 @@
 }
 
 .logo:hover {
-    scale: 1.2;
-    filter: drop-shadow(0px 0px 15px #bbbb07);
+    scale: 1.1;
+    filter: drop-shadow(0px 0px 15px #5a5a5a);
 
 }

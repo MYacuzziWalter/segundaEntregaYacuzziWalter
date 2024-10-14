@@ -16,10 +16,10 @@ const Item = ({ item }) => {
         <div className={Style.cardContainer}>
             <img src={item.pictureUrl} />
             <h2>{item.tittle}</h2>
-            <span>{item.description}</span>
-            <span>${item.price}</span>
+            <span className={Style.descript}>{item.description}</span>
+            <span className={Style.price}>${item.price}</span>
             <Link to={`/detail/${item.id}`}>
-                <button>detail</button>
+                <button className={Style.buttonDetail}>Detail</button>
             </Link>
         </div>
     )
