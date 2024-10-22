@@ -10,6 +10,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Layout from "./components/Layout/Layout";
 import NotFound from "./components/NotFound/NotFound"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartProvider from './context/CartProvider';
 
 
 
@@ -18,6 +19,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 function App() {
   return (
     <>
+    <CartProvider>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -28,6 +30,8 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+    </CartProvider>
+      
     </>
   )
 }
