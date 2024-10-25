@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import './itemCount.css'
 
 export const ItemCount = ({ stock, initial, addCart }) => {
-    const [cantidad, setCantidad] = useState(initial)
+    const [quantity, setQuantity] = useState(initial)
 
     const increment = () => {
-        if (cantidad < stock) {
-            setCantidad(cantidad + 1)
+        if (quantity < stock) {
+            setQuantity(quantity + 1)
         }
     }
 
     const decrement = () => {
-        if (cantidad > 1) {
-            setCantidad(cantidad - 1)
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
         }
     }
 
@@ -21,11 +21,11 @@ export const ItemCount = ({ stock, initial, addCart }) => {
             <div className='container'>
                 <div className='buttonContainer'>
                     <button onClick={decrement}>-</button>
-                    <h5 className='number'>{cantidad}</h5>
+                    <h5 className='number'>{quantity}</h5>
                     <button onClick={increment}>+</button>
                 </div>
                 <div className='containerConfirm'>
-                    <button className='buttonConfirm' onClick={() => addCart(cantidad)} disabled={!stock}>Agregar</button>
+                    <button className='buttonConfirm' onClick={() => addCart(quantity)} disabled={!stock}>Agregar</button>
                 </div>
             </div>
         </>

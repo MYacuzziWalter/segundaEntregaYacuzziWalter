@@ -11,13 +11,17 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
+        
         const product = mockProducts.find(productToFind => productToFind.id === Number(id))
 
         setProducts(product)
+        
+        
     }, [id])
 
 
     return ( product && <ItemDetail product={product}/>
+        
     )
 }
 
