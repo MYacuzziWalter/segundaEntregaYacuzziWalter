@@ -15,7 +15,6 @@ const CartProvider = ({children}) => {
 
     const addCart = (product, productQuantity) => {
 
-
         const productInCart = isInCart(product.id)
         console.log(productInCart);
         let cartUpdated = [...cart]
@@ -24,7 +23,7 @@ const CartProvider = ({children}) => {
                 if(cartProduct.id === product.id) {
                     return {
                         ...cartProduct,
-                        quantity: cartProduct.quantity + productQuantity
+                        quantity: cartProduct.quantity + productQuantity 
                     }
                 }
                 return cartProduct;
@@ -40,6 +39,15 @@ const CartProvider = ({children}) => {
         unpdateQuantity(cartUpdated)
     }
 
+    const removeItem = (product) => {
+        const cartUpdated = cart.filter(prod => prod.id !== product.id)
+        setCart(cartUpdated)
+    }
+
+    const clearCart = () => {
+        setCart([])
+    }
+
     const isInCart = (productId) => {
         return cart.some(cartProduct => cartProduct.id === productId)
     }
@@ -50,7 +58,7 @@ const CartProvider = ({children}) => {
     }
 
     return (
-        <Cart.Provider value={{addCart, cart, quantity}}>{children}</Cart.Provider>
+        <Cart.Provider value={{addCart, cart, quantity, removeItem, clearCart}}>{children}</Cart.Provider>
     )
 }
 
